@@ -1,38 +1,20 @@
-# Yet another utlity for face recognition 
+# Implementation of a LeNet for a Face Recognition task
 
-My implementation of a face recognitor based on Theano+Keras. It also uses Jupyter Notebook.
+My implementation of a face recognition script based on Theano+Keras. It uses a LeNet architecture.
 
-### Installation
+### Requiriments
 
-This utility requires Theano, Keras, Jupyter Notebook, scipy and numpy to be installed. 
+* Theano
+* Keras
+* numpy
+* PIL
 
-### Model
+### Training
 
-First of all, you need to define and train the model. You can train it manually and self-set the hyperparameters:
-```sh
-model = create_model()
-model = train_model(model)
-```
-Or you can just load the serialized model from .json:
-```sh
-model = load_model()
-```
-The traning datasets are stored at /data. Positive and negative images are loaded separately.  
+First of all, you need to define and train the model. You can train it manually and set the hyperparameters: `create_model()` and `train_model(model)`
+
+The training set with around ~100 training samples is stored at `/data`.
 
 ### Executing
-To use the model for prediction replace the test image at */data/test/test.png*  with your one and simply run the folliwing method:
-```sh
-execute()
-```
-And the utility will print to console 'True', if your image is a face, or 'False' otherwise.
 
-### License
-
-This application is a training work, it is based on open-source software and it does not require any license. 
-
-Thanks for reading this, and if you have any questions you can always contact me:
-
-Amir Bakarov
-amirbakarov@ya.ru
-
-
+To check the model you should replace a test image at */data/test/test.png*  with yours and run `execute_check()`. The code prints 'True' if image is a face, or 'False' otherwise.
